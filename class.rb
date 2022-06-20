@@ -1,15 +1,3 @@
-class Circle
-  def initialize(rad)
-    @rad = rad
-  end
-  def  getArea()
-    return 3.14*@rad*@rad
-  end
-  def getCircumference()
-    return @rad*2*3.14
-  end
-end
-
 puts "........."
 class Student
   def initialize(name,roll)
@@ -25,5 +13,17 @@ class Student
   end
   def setMarks(marks)
     @marks = marks
+  end
+end
+
+class Circle
+  def initialize(rad)
+    @rad = rad
+  end
+  def  getArea()
+    return 3.14*@rad*@rad
+  end
+  def getCircumference()
+    return @rad*2*3.14
   end
 end

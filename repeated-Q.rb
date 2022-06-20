@@ -1,8 +1,3 @@
-arr = [2,3,4,3,2,67,2,4]
-repeats = arr.length - arr.uniq.length
-puts repeats
-
-
 num = 554
 count = 0
 numArray = [1,5,3]
@@ -17,3 +12,7 @@ for i in 0..numArray.length
 end
 
 puts count
+
+arr = [2,3,4,3,2,67,2,4]
+repeats = arr.length - arr.uniq.length
+puts repeats
