@@ -1,0 +1,49 @@
+<br>
+<h2 class="text-uppercase text-center mb-5">ALL ITEMS</h2>
+<section class="vh-100 bg-image">
+   <div class="mask d-flex align-items-center h-50 gradient-custom-3">
+      <div class="container h-100">
+         <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+               <div class="card" style="border-radius: 15px;">
+                  <div class="card-body p-5">
+                     <div class="table-responsive">
+                        <table id="items" class="table table-hover table-responsive table align-middle">
+                           <thead>
+                              <tr>
+                                 <th scope="col">Item Code</th>
+                                 <th scope="col">Item Name</th>
+                                 <th scope="col">Quantity</th>
+                                 <th scope="col">Unit Price</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <% @items.each do |item| %>
+                              <tr >
+                                 <td scope="row"><%= item.itemID %>
+                                 <td scope="row"><%= item.itemName %>
+                                 <td scope="row"><%= item.quantity %>
+                                 <td scope="row"><%= item.unit_price %>
+                                 <td scope="row">
+                                    <%= link_to 'Edit', edit_item_path(item) %>
+                                 </td>
+                                 <td scope="row"><%= button_to 'Delete', item,
+                                    method: :delete,
+                                    class: 'remove-submit-btn-style',
+                                    data: { confirm: 'Are you sure?' } %></td>
+                              </tr>
+                              <% end %>
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="d-grid d-md-flex justify-content-md-center">
+                        <%= link_to "New item", new_item_path, class:"btn btn-secondary" %>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+</section>

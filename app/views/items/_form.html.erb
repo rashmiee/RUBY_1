@@ -1,0 +1,45 @@
+<section class="vh-100 bg-image">
+   <div class="mask d-flex align-items-center h-50 gradient-custom-3">
+      <div class="container h-100">
+         <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+               <div class="card" style="border-radius: 15px;">
+                  <div class="card-body p-5">
+                     <%= form_with(model: item) do |form| %>
+                     <% if item.errors.any? %>
+                     <div style="color: red">
+                        <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+                        <ul>
+                           <% item.errors.each do |error| %>
+                           <li><%= error.full_message %></li>
+                           <% end %>
+                        </ul>
+                     </div>
+                     <% end %>
+                     <div class="form-outline mb-4 text-center">
+                        <%= form.label :itemID, 'Item ID', style: "display: block" %>
+                        <%= form.text_field :itemID %>
+                     </div>
+                     <div class="form-outline mb-4 text-center">
+                        <%= form.label :itemName, 'Item Name', style: "display: block" %>
+                        <%= form.text_field :itemName %>
+                     </div>
+                     <div class="form-outline mb-4 text-center">
+                        <%= form.label :quantity, 'Quantity', style: "display: block" %>
+                        <%= form.number_field :quantity %>
+                     </div>
+                     <div class="form-outline mb-4 text-center">
+                        <%= form.label :unit_price, 'Unit Price', style: "display: block" %>
+                        <%= form.text_field :unit_price %>
+                     </div>
+                     <div class="d-flex justify-content-center">
+                        <%= form.submit class:'btn btn-secondary'%>
+                     </div>
+                     <% end %>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
